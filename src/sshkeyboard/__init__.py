@@ -484,10 +484,6 @@ def _read_char(debug):
 
 
 def _read_char_win(debug):
-    # Return if nothing to read
-    if not msvcrt.kbhit():
-        return ""
-
     char = msvcrt.getwch()
     if char in _WIN_SPECIAL_CHAR_STARTS:
         # Check if requires one more read
